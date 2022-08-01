@@ -59,7 +59,7 @@ const getRepos = async function () {
             // }
         );
         let data = await res.json();
-        repos = repos.concat(data);
+        repos = repos.concat(data.filter(repo => repo.name === 'projects'));
     }
     displayRepos(repos);
 };
